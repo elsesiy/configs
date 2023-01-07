@@ -38,7 +38,7 @@ vim.keymap.set('n', '<Leader>u', ':UndotreeToggle<CR>')
 
 -- clipboard ops
 vim.keymap.set('x', '<Leader>p', '\"_dP')
-vim.keymap.set('n', '<Leader>Y', '\"+Y', {noremap=false})
+vim.keymap.set('n', '<Leader>Y', '\"+Y', { noremap = false })
 vim.keymap.set('n', '<Leader>y', '\"+y')
 vim.keymap.set('v', '<Leader>y', '\"+y')
 vim.keymap.set('n', '<Leader>d', '\"_d')
