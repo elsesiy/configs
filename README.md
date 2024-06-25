@@ -6,12 +6,9 @@ Central place to manage my terminal configs such as neovim, zhsrc, etc.
 
 - Install font for icons to work & update terminal accordingly.
 Either use `JetBrainsMono` located in `fonts` or browse others [here](https://github.com/ryanoasis/nerd-fonts)
-- Install [bat](https://github.com/sharkdp/bat)
-- Install [fish](https://fishshell.com/)
+- Install [Nix (Package Manager)](https://nixos.org/download/)
 - Install [NvChad](https://github.com/NvChad/NvChad)
 - Install [wezterm](https://wezfurlong.org/wezterm/index.html)
-- Install [yazi](https://yazi-rs.github.io/)
-- Install [zellij](https://zellij.dev/)
 
 ### Setting up fish (Mac)
 
@@ -34,7 +31,7 @@ rm -rf ~/.local/share/nvim
 # backup existing fish config
 mv ~/.config/fish/config.fish{,.bak}
 
-# symlink configs for bat, fish, starship, wezterm, yazi & zellij
+# symlink configs for bat, fish, nix, starship, wezterm, yazi & zellij
 stow --target=/Users/$USER/.config configs
 
 # rebuild bat cache
@@ -42,6 +39,9 @@ bat cache --build
 
 # install fish plugins
 fisher update
+
+# restart nix daemon
+sudo launchctl kickstart -k system/org.nixos.nix-daemon
 
 # nvim
 mkdir -p ~/.config/nvim && stow --target=/Users/$USER/.config/nvim nvim

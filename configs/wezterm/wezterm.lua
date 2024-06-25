@@ -2,6 +2,10 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+config.set_environment_variables = {
+  PATH = wezterm.home_dir .. '/.nix-profile/bin:' .. os.getenv('PATH')
+}
+
 config.color_scheme = "Catppuccin Mocha"
 config.default_prog = { "zellij" }
 config.disable_default_key_bindings = true
